@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"gopkg.in/h2non/bimg.v0"
+	"github.com/leiyangyou/bimg"
 	"io"
 	"io/ioutil"
 	"net/http"

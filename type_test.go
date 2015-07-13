@@ -1,7 +1,7 @@
 package main
 
 import (
-	"gopkg.in/h2non/bimg.v0"
+	"github.com/leiyangyou/bimg"
 	"testing"
 )
 

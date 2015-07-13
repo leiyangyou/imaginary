@@ -2,7 +2,7 @@ package main
 
 import (
 	"encoding/json"
-	"gopkg.in/h2non/bimg.v0"
+	"github.com/leiyangyou/bimg"
 )
 
 type ImageOptions struct {
