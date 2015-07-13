@@ -19,6 +19,7 @@ type ImageOptions struct {
 	Factor      int
 	DPI         int
 	TextWidth   int
+  LineSpacing int
 	Force       bool
 	NoCrop      bool
 	NoReplicate bool
@@ -227,6 +228,7 @@ func Watermark(buf []byte, o ImageOptions) (Image, error) {
 	opts.Watermark.Font = o.Font
 	opts.Watermark.Margin = o.Margin
 	opts.Watermark.Width = o.TextWidth
+	opts.Watermark.LineSpacing = o.LineSpacing
 	opts.Watermark.Opacity = o.Opacity
 	opts.Watermark.NoReplicate = o.NoReplicate
 

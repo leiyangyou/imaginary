@@ -10,6 +10,7 @@ import (
 
 var allowedParams = map[string]string{
 	"width":       "int",
+	"linespacing": "int",
 	"height":      "int",
 	"quality":     "int",
 	"top":         "int",
@@ -82,6 +83,7 @@ func mapImageParams(params map[string]interface{}) ImageOptions {
 		DPI:         params["dpi"].(int),
 		Quality:     params["quality"].(int),
 		TextWidth:   params["textwidth"].(int),
+		LineSpacing: params["linespacing"].(int),
 		Compression: params["compression"].(int),
 		Rotate:      params["rotate"].(int),
 		Factor:      params["factor"].(int),
