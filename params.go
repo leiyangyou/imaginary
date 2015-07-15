@@ -34,6 +34,8 @@ var allowedParams = map[string]string{
 	"type":        "string",
 	"color":       "color",
 	"colorspace":  "colorspace",
+	"mask":		   "color",
+	"maskopacity":  "float",
 }
 
 func readParams(r *http.Request) ImageOptions {
@@ -98,6 +100,8 @@ func mapImageParams(params map[string]interface{}) ImageOptions {
 		NoProfile:   params["noprofile"].(bool),
 		Opacity:     float32(params["opacity"].(float64)),
 		Colorspace:  params["colorspace"].(bimg.Interpretation),
+		Mask:        params["mask"].([]uint8),
+		MaskOpacity: float32(params["maskopacity"].(float64)),
 	}
 }
 

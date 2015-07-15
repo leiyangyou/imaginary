@@ -19,7 +19,7 @@ type ImageOptions struct {
 	Factor      int
 	DPI         int
 	TextWidth   int
-  LineSpacing int
+  	LineSpacing int
 	Force       bool
 	NoCrop      bool
 	NoReplicate bool
@@ -30,6 +30,8 @@ type ImageOptions struct {
 	Font        string
 	Type        string
 	Color       []uint8
+	Mask	    []uint8
+	MaskOpacity float32
 	Colorspace  bimg.Interpretation
 }
 
@@ -234,6 +236,11 @@ func Watermark(buf []byte, o ImageOptions) (Image, error) {
 
 	if len(o.Color) > 2 {
 		opts.Watermark.Background = bimg.Color{o.Color[0], o.Color[1], o.Color[2]}
+	}
+
+	if len(o.Mask) > 2 {
+		opts.Watermark.Mask = bimg.Color{o.Mask[0], o.Mask[1], o.Mask[2]}
+		opts.Watermark.MaskOpacity = o.MaskOpacity
 	}
 
 	return Process(buf, opts)
